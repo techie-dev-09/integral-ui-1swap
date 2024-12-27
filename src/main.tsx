@@ -20,11 +20,19 @@ import CreatePoolPage from '@/pages/CreatePool/index.tsx';
 
 import { ApolloProvider } from '@apollo/client';
 import { infoClient } from './graphql/clients/index.tsx';
+import LandingPage from './pages/LandingPage/index.tsx';
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <Navigate replace to={'/swap'} />,
+        element: <Navigate replace to={'/welcome'} />,
         errorElement: <Page404 />,
+    },
+      {
+        path: '/welcome',
+        element: 
+        <App>
+            <LandingPage />
+        </App>
     },
     {
         path: '/swap',

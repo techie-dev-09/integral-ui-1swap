@@ -1,6 +1,6 @@
 import Navigation from "@/components/common/Navigation"
-import AlgebraLogo from "@/assets/algebra-logo.svg"
-import AlgebraIntegral from "@/assets/algebra-itegral.svg"
+import AlgebraLogo from "@/assets/1swap.svg"
+import AlgebraIntegral from "@/assets/1swap-full.svg"
 import { NavLink } from "react-router-dom"
 import { useWeb3Modal, useWeb3ModalState } from "@web3modal/wagmi/react"
 import { DEFAULT_CHAIN_ID, DEFAULT_CHAIN_NAME } from "@/constants/default-chain-id"
@@ -22,11 +22,11 @@ const Header = () => <header className="sticky top-4 z-10 grid grid-cols-3 justi
 
 const Algebra = () => <div className="flex items-center gap-2">
     <NavLink to={'/'}>
-        <div className="flex items-center gap-2 py-1 pl-2 pr-3 bg-card rounded-3xl hover:bg-card-hover duration-200">
+        <div className="flex items-center justify-center gap-2 py-1 pl-2 pr-3 bg-card rounded-3xl hover:bg-card-hover duration-200">
             <div className="flex items-center justify-center w-[32px] h-[32px] rounded-full">
-                <img src={AlgebraLogo} width={25} height={25} />
+                <img src={AlgebraLogo} width={25} height={25} style={{height:"25px"}} />
             </div>
-            <img className="hidden md:block" src={AlgebraIntegral} width={140} height={25} />
+            <img className="hidden md:block mt-1 w-full" src={AlgebraIntegral} width={140} height={25} style={{ height:"25px" }} />
         </div>
     </NavLink>
 </div>
