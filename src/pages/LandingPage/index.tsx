@@ -53,8 +53,8 @@ const LandingPage = () => {
     <PageContainer>
       <div className="App">
         <div className="main-content">
-          <div className="container">
-            <div className="first-section">
+          <div className="first-section">
+            <div className="container">
               <div className="fs-content">
                 <h1>
                   THE ULTIMATE <br />
@@ -63,8 +63,10 @@ const LandingPage = () => {
                 <a href="#">Trade Now</a>
               </div>
             </div>
+          </div>
 
-            <div className="second-section">
+          <div className="second-section">
+            <div className="container">
               <div className="img-container">
                 <div className="first-slide">
                   <div className="top-img">
@@ -131,58 +133,167 @@ const LandingPage = () => {
           </div>
 
           <div className="third-section">
-            <div className="ts-content">
-              <h2>1SWAP in Numbers</h2>
-              {/* <div className="three-col-content">
-                <div className="single-col-content">
-                  <div className="left-col">
-                    <div className="img-border">
-                      <div className="img-bg">
-                        <img
-                          src="https://thena.fi/images/home/stats/stat1.svg"
-                          alt="img"
-                        />
+            <div className="container">
+              <div className="ts-content">
+                <h2>THENA in Numbers</h2>
+                <div className="three-col-content">
+                  <div className="single-col-content">
+                    <div className="left-col">
+                      <div className="img-border">
+                        <div className="img-bg">
+                          <img
+                            src="https://thena.fi/images/home/stats/stat1.svg"
+                            alt="img"
+                          />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="right-col">
-                    <p>Total Volume</p>
-                    <h4>$32.33B</h4>
-                  </div>
-                </div>
-                <div className="single-col-content">
-                  <div className="left-col">
-                    <div className="img-border">
-                      <div className="img-bg">
-                        <img
-                          src="https://thena.fi/images/home/stats/dollar.svg"
-                          alt="img"
-                        />
-                      </div>
+                    <div className="right-col">
+                      <p>Total Volume</p>
+                      <h4>$22.55B</h4>
                     </div>
                   </div>
-                  <div className="right-col">
-                    <p>Total Value Locked</p>
-                    <h4>$22.09M</h4>
-                  </div>
-                </div>
-                <div className="single-col-content">
-                  <div className="left-col">
-                    <div className="img-border">
-                      <div className="img-bg">
-                        <img
-                          src="https://thena.fi/images/home/stats/dollar.svg"
-                          alt="img"
-                        />
+                  <div className="single-col-content">
+                    <div className="left-col">
+                      <div className="img-border">
+                        <div className="img-bg">
+                          <img
+                            src="https://thena.fi/images/home/stats/dollar.svg"
+                            alt="img"
+                          />
+                        </div>
                       </div>
                     </div>
+                    <div className="right-col">
+                      <p>Total Value Locked</p>
+                      <h4>$62.09M</h4>
+                    </div>
                   </div>
-                  <div className="right-col">
-                    <p>Total Revenue</p>
-                    <h4>$30.27M</h4>
+                  <div className="single-col-content">
+                    <div className="left-col">
+                      <div className="img-border">
+                        <div className="img-bg">
+                          <img
+                            src="https://thena.fi/images/home/stats/dollar.svg"
+                            alt="img"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="right-col">
+                      <p>Total Revenue</p>
+                      <h4>$30.27M</h4>
+                    </div>
                   </div>
                 </div>
-              </div> */}
+              </div>
+            </div>
+          </div>
+
+          <div className="forth-section">
+            <div className="container">
+              <div className="forth-content">
+                <h2>
+                  Unlock DeFi for <span>ICP</span> and <span>Runes</span>
+                </h2>
+                <p>1swap is the first lending protocol on Bitfinity.</p>
+                <a href="#" rel="noopener">
+                  Go to app
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="fifth-section">
+            <div className="container">
+              <div className="strike-content">
+                <p>
+                  <span>Metrics</span>
+                </p>
+              </div>
+              <h2>Jump Into Untapped DeFi Potential</h2>
+              <p>
+                With 1swap, you have easy access to a new array of <br />
+                assets.
+              </p>
+
+              <div className="three-col-card">
+                <div className="single-card">
+                  <div className="card-content">
+                    <h3 className="text-blue">$4B</h3>
+                    <p>ICP Market Cap</p>
+                  </div>
+                </div>
+                <div className="single-card">
+                  <div className="card-content">
+                    <h3 className="text-blue">$0.05B</h3>
+                    <p>ICP DeFi TVL</p>
+                  </div>
+                </div>
+                <div className="single-card">
+                  <div className="card-content">
+                    <h3 className="text-blue">1%</h3>
+                    <p>DeFi TVL/Market Cap</p>
+                  </div>
+                </div>
+                <div className="single-card">
+                  <div className="card-content">
+                    <h3 className="text-yellow">$2.5B</h3>
+                    <p>Runes + BRC-20 Market Cap</p>
+                  </div>
+                </div>
+                <div className="single-card">
+                  <div className="card-content">
+                    <h3 className="text-yellow">$0</h3>
+                    <p>EVM Runes + BRC-20 DeFi TVL</p>
+                  </div>
+                </div>
+                <div className="single-card">
+                  <div className="card-content">
+                    <h3 className="text-yellow">0%</h3>
+                    <p>DeFi TVL/Market Cap</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="sixth-section">
+            <div className="container">
+              <div className="style-hr">
+                <h2>Partners</h2>
+                <p>
+                  We work with innovative platforms and industry leaders to
+                  improve the ICP and Bitcoin ecosystems.
+                </p>
+              </div>
+              <div className="multiple-images">
+                <div className="imgs">
+                  <div className="img">
+                    <img src="https://utfs.io/f/65d67b14-b2ea-4d48-b9f5-70f7a97c2e74-jk5k6t.svg" />
+                    <p>
+                      <a href="1buy.io">1buy.io</a>
+                    </p>
+                  </div>
+                  <div className="img">
+                    <img src="https://www.lendfinity.xyz/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbitfinityevm.9ca2b0e8.png&w=256&q=75" />
+                    <p>
+                      <a href="https://bitfinity.network/">Bitfinity</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="seventh-section">
+            <div className="container">
+              <h2>Join Us in Revolutionizing DeFi</h2>
+              <p>
+                Be part of the next wave of DeFi. Secure your position with
+                1swap.
+              </p>
+              <a href="#">Go to app</a>
             </div>
           </div>
         </div>
