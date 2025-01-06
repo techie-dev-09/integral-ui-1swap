@@ -231,7 +231,8 @@ const SwapChart = () => {
     }, [chartRef, chartType, formattedData]);
 
     const currentValue = useMemo(() => {
-        if (!formattedData) return ''
+    if (!formattedData || (formattedData && formattedData.length === 0))
+      return '';
 
         const value = formattedData[formattedData.length - 1].value;
 
