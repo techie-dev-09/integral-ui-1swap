@@ -11,6 +11,7 @@ import { computeRealizedLPFeePercent, warningSeverity } from "@/utils/swap/price
 import { ADDRESS_ZERO, computePoolAddress, Currency, Percent, Trade, TradeType, unwrappedToken } from "@cryptoalgebra/sdk";
 import { ChevronDownIcon, ChevronRightIcon, ZapIcon } from "lucide-react";
 import { Fragment, useEffect, useMemo, useState } from "react";
+import { Address, parseUnits } from 'viem';
 
 const SwapParams = () => {
 
@@ -30,6 +31,8 @@ const SwapParams = () => {
 
         async function getFees () {
 
+            if (!trade) return undefined;
+
             const fees = [];
 
             for (const route of trade.swaps) {
@@ -42,7 +45,7 @@ const SwapParams = () => {
                     })
 
                     const poolContract = getAlgebraPool({
-                        address
+                        address: address as Address
                     })
 
                     const plugin = await poolContract.read.plugin()
@@ -51,6 +54,8 @@ const SwapParams = () => {
                         address: plugin
                     })
 
+                    const isZeroToOne = trade.inputAmount.currency.wrapped.sortsBefore(trade.outputAmount.currency.wrapped)
+
                     let beforeSwap: [string, number, number]
 
                     try {
@@ -58,11 +63,13 @@ const SwapParams = () => {
                         ALGEBRA_ROUTER,
                         ADDRESS_ZERO,
                         isZeroToOne,
-                        trade.tradeType === TradeType.EXACT_INPUT ? trade?.inputAmount : trade?.outputAmount,
+                        trade.tradeType === TradeType.EXACT_INPUT ? 
+                            parseUnits(trade.inputAmount.toExact(), trade.inputAmount.currency.decimals) : 
+                            parseUnits(trade.outputAmount.toExact(), trade.outputAmount.currency.decimals),
                         MAX_UINT128,
                         false,
                         '0x'
-                      ], { account: address }).then(v => v.result as [string, number, number])
+                      ], { account: address as Address }).then(v => v.result as [string, number, number])
                     } catch (error) {
                       beforeSwap = ['', 0, 0]
                     }
