@@ -4,7 +4,6 @@ import SwapParams from '@/components/swap/SwapParams';
 import PageContainer from '@/components/common/PageContainer';
 import PageTitle from '@/components/common/PageTitle';
 import PoweredByAlgebra from '@/components/common/PoweredByAlgebra';
-import SwapChart from '@/components/swap/SwapChart';
 
 const SwapPage = () => {
     return (
@@ -23,9 +22,7 @@ const SwapPage = () => {
                     <PoweredByAlgebra />
                 </div>
 
-                <div className="col-span-2">
-                  <SwapChart />
-                </div>
+                <div className="col-span-2">{/* <SwapChart /> */}</div>
             </div>
         </PageContainer>
     );

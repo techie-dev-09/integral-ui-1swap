@@ -3,7 +3,14 @@ import { useCurrency } from "@/hooks/common/useCurrency";
 import { usePool } from "@/hooks/pools/usePool";
 import { usePositionFees } from "@/hooks/positions/usePositionFees";
 import { PositionFromTokenId } from "@/hooks/positions/usePositions";
-import { Currency, CurrencyAmount, Percent, Position, computePoolAddress, unwrappedToken } from "@cryptoalgebra/integral-sdk";
+import {
+  Currency,
+  CurrencyAmount,
+  Percent,
+  Position,
+  computePoolAddress,
+  unwrappedToken,
+} from "@cryptoalgebra/sdk";
 import { useCallback, useMemo } from "react";
 import { Address, useAccount } from "wagmi";
 import { create } from "zustand";
@@ -48,7 +55,7 @@ export function useDerivedBurnInfo(
 
     const poolId = currency0 && currency1 && computePoolAddress({
         tokenA: currency0.wrapped,
-        tokenB: currency1.wrapped
+        tokenB: currency1.wrapped,
     }) as Address
 
     const [, pool] = usePool(poolId);

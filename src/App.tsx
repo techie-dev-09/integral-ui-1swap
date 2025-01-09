@@ -1,20 +1,20 @@
-import { createWeb3Modal, defaultWagmiConfig } from "@web3modal/wagmi/react";
-import "./styles/_colors.css";
-import "./App.css";
+import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react'
+import './styles/_colors.css'
+import './App.css'
 
-import { WagmiConfig } from "wagmi";
-import Layout from "@/components/common/Layout";
-import { defineChain } from "viem";
+import { WagmiConfig } from 'wagmi'
+import { defineChain } from 'viem'
+import Layout from "@/components/common/Layout"
 
-import ETHLogo from "@/assets/tokens/ether.svg";
+import ETHLogo from '@/assets/tokens/ether.svg'
 
-const projectId = import.meta.env.VITE_WALLETCONNECT_PROJECT_ID;
+const projectId = import.meta.env.VITE_WALLETCONNECT_PROJECT_ID
 
-const holeskyChain = defineChain({
-  id: 17000,
-  network: "holesky",
-  name: "Holesky",
-  nativeCurrency: { name: "Holesky Ether", symbol: "ETH", decimals: 18 },
+const bitfinity = defineChain({
+  id: 355113,
+  network: 'bitfinity-testnet',
+  name: 'Bitfinity Testnet',
+  nativeCurrency: { name: 'BTF', symbol: 'BTF', decimals: 18 },
   rpcUrls: {
     default: {
       http: [import.meta.env.VITE_INFURA_RPC],
@@ -25,54 +25,42 @@ const holeskyChain = defineChain({
   },
   blockExplorers: {
     etherscan: {
-      name: "Etherscan",
-      url: "https://holesky.etherscan.io",
+      name: 'Bitfinity Explorer',
+      url: 'https://explorer.testnet.bitfinity.network/',
     },
     default: {
-      name: "Etherscan",
-      url: "https://holesky.etherscan.io",
-    },
-  },
-  contracts: {
-    multicall3: {
-      address: "0xca11bde05977b3631167028862be2a173976ca11",
-      blockCreated: 77,
+      name: 'Bitfinity Explorer',
+      url: 'https://explorer.testnet.bitfinity.network/',
     },
   },
   testnet: true,
-});
+})
 
-const chains = [holeskyChain];
-const wagmiConfig = defaultWagmiConfig({
-  chains,
-  projectId,
-  metadata: {
-    name: "Algebra Integral",
-    description: "DEX Engine",
-    url: "https://integral.algebra.finance",
-    icons: [""],
-  },
-});
+const chains = [bitfinity]
+const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata: { name: 'Algebra Integral', description: 'DEX Engine', url: 'https://integral.algebra.finance', icons: [''] } })
 
-createWeb3Modal({
-  wagmiConfig,
-  projectId,
+createWeb3Modal({ 
+  wagmiConfig, 
+  projectId, 
   chains,
   chainImages: {
-    17000: ETHLogo,
+    355113: ETHLogo
   },
-  defaultChain: holeskyChain,
+  defaultChain: bitfinity,
   themeVariables: {
-    "--w3m-accent": "#2797ff",
-  },
-});
+    '--w3m-accent': '#2797ff'
+  }
+})
 
 function App({ children }: { children: React.ReactNode }) {
+
   return (
     <WagmiConfig config={wagmiConfig}>
-      <Layout>{children}</Layout>
+        <Layout>
+          {children}
+        </Layout>
     </WagmiConfig>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -4,10 +4,9 @@ import { useEffect, useMemo } from 'react';
 import { SwapField } from '@/types/swap-field';
 import {
     ADDRESS_ZERO,
-    INITIAL_POOL_FEE,
     NonfungiblePositionManager,
     computePoolAddress,
-} from '@cryptoalgebra/integral-sdk';
+} from '@cryptoalgebra/sdk';
 import { usePrepareAlgebraPositionManagerMulticall } from '@/generated';
 import { useTransactionAwait } from '@/hooks/common/useTransactionAwait';
 import { Address, useContractWrite } from 'wagmi';
@@ -50,7 +49,7 @@ const CreatePoolForm = () => {
         currencyA ?? undefined,
         currencyB ?? undefined,
         poolAddress ?? undefined,
-        INITIAL_POOL_FEE,
+        100,
         currencyA ?? undefined,
         undefined
     );
@@ -62,7 +61,7 @@ const CreatePoolForm = () => {
                 value: undefined,
             };
 
-        return NonfungiblePositionManager.createCallParameters(mintInfo.pool);
+        return NonfungiblePositionManager.createCallParameters(mintInfo.pool, ADDRESS_ZERO);
     }, [mintInfo?.pool]);
 
     const { config: createPoolConfig } =

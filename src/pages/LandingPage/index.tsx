@@ -4,7 +4,8 @@ import { gsap } from "gsap";
 import "./LandingPage.css";
 import { FaDiscord, FaGithub, FaMedium, FaTelegramPlane } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
-
+import AlgebraLogo from "@/assets/1swap.svg";
+import AlgebraIntegral from "@/assets/1swap-full.svg";
 import swap1 from "@/assets/landingpage/swap1.png";
 import swap2 from "@/assets/landingpage/swap2.png";
 import swap3 from "@/assets/landingpage/swap3.png";
@@ -61,8 +62,8 @@ const LandingPage = () => {
               <div className="container">
                 <div className="fs-content">
                   <h1>
-                    THE ULTIMATE <br />
-                    Decentralized Exchange
+                    THE FIRST <br />
+                    composable DEX built on bitcoin{" "}
                   </h1>
                   <a href="#">Trade Now</a>
                 </div>
@@ -136,7 +137,7 @@ const LandingPage = () => {
               </div>
             </div>
 
-            <div className="third-section">
+            {/* <div className="third-section">
               <div className="container">
                 <div className="ts-content">
                   <h2>THENA in Numbers</h2>
@@ -192,7 +193,7 @@ const LandingPage = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <div className="forth-section">
               <div className="container">
@@ -200,7 +201,7 @@ const LandingPage = () => {
                   <h2>
                     Unlock DeFi for <span>ICP</span> and <span>Runes</span>
                   </h2>
-                  <p>1swap is the first lending protocol on Bitfinity.</p>
+                  <p>1swap is the first componible swap on Bitfinity.</p>
                   <a href="#" rel="noopener">
                     Go to app
                   </a>
@@ -307,7 +308,25 @@ const LandingPage = () => {
         <div className="container">
           <div className="right-content">
             <div className="footer-logo">
-              <span className="logo">Swap.io</span>
+              <span className="logo">
+                <div className="flex items-center gap-2 py-1 pl-2 duration-200">
+                  <div className="flex items-center justify-center w-[32px] h-[32px] rounded-full">
+                    <img
+                      src={AlgebraLogo}
+                      width={25}
+                      height={25}
+                      style={{ height: "25px" }}
+                    />
+                  </div>
+                  <img
+                    className="hidden md:block mt-1"
+                    src={AlgebraIntegral}
+                    width={80}
+                    height={25}
+                    style={{ height: "25px" }}
+                  />
+                </div>
+              </span>
             </div>
             <div className="footer-icons">
               <ul className="icons-list">
