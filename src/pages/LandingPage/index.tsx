@@ -199,9 +199,10 @@ const LandingPage = () => {
               <div className="container">
                 <div className="forth-content">
                   <h2>
-                    Unlock DeFi for <span>ICP</span> and <span>Runes</span>
+                    Infinite DeFi for <span>ICP BRC-20</span> and{" "}
+                    <span>Runes</span>
                   </h2>
-                  <p>1swap is the first componible swap on Bitfinity.</p>
+                  <p>1swap is the first composable swap on Bitfinity.</p>
                   <a href="#" rel="noopener">
                     Go to app
                   </a>
