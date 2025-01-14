@@ -19,6 +19,7 @@ import cp1 from "@/assets/landingpage/cp1.png";
 import cp2 from "@/assets/landingpage/cp2.png";
 import cp3 from "@/assets/landingpage/cp3.png";
 import cp4 from "@/assets/landingpage/cp4.png";
+import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   useEffect(() => {
@@ -65,7 +66,7 @@ const LandingPage = () => {
                     THE FIRST <br />
                     composable DEX built on bitcoin{" "}
                   </h1>
-                  <a href="#">Trade Now</a>
+                  <Link to={"/swap"}>Swap Now</Link>
                 </div>
               </div>
             </div>
@@ -203,9 +204,7 @@ const LandingPage = () => {
                     <span>Runes</span>
                   </h2>
                   <p>1swap is the first composable swap on Bitfinity.</p>
-                  <a href="#" rel="noopener">
-                    Go to app
-                  </a>
+                  <Link to={"/swap"}>Go to app</Link>
                 </div>
               </div>
             </div>
@@ -299,7 +298,7 @@ const LandingPage = () => {
                   Be part of the next wave of DeFi. Secure your position with
                   1swap.
                 </p>
-                <a href="#">Go to app</a>
+                <Link to={"/swap"}>Go to app</Link>
               </div>
             </div>
           </div>
