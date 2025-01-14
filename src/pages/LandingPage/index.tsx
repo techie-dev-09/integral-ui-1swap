@@ -62,10 +62,24 @@ const LandingPage = () => {
             <div className="first-section">
               <div className="container">
                 <div className="fs-content">
-                  <h1>
-                    THE FIRST <br />
-                    composable DEX built on bitcoin{" "}
+                  <h1 className="d-flex flex-row align-items-center">
+                    <span>
+                      THE FIRST <br />
+                      <div className="flex flex-row items-center justify-center">
+                        <span>composable DEX built on </span>
+                        <img
+                          src="https://s2.coinmarketcap.com/static/img/coins/128x128/1.png"
+                          alt="Coin Icon"
+                          style={{
+                            width: "64px",
+                            height: "64px",
+                            marginLeft: "8px",
+                          }}
+                        />
+                      </div>
+                    </span>
                   </h1>
+
                   <Link to={"/swap"}>Swap Now</Link>
                 </div>
               </div>
@@ -259,6 +273,24 @@ const LandingPage = () => {
                       <p>DeFi TVL/Market Cap</p>
                     </div>
                   </div>
+                  {/* <div className="single-card">
+                    <div className="card-content">
+                      <h3 className="text-blue">$4B</h3>
+                      <p>BTC Market Cap</p>
+                    </div>
+                  </div>
+                  <div className="single-card">
+                    <div className="card-content">
+                      <h3 className="text-blue">$0.05B</h3>
+                      <p>BTC DeFi TVL</p>
+                    </div>
+                  </div>
+                  <div className="single-card">
+                    <div className="card-content">
+                      <h3 className="text-blue">1%</h3>
+                      <p>BTC TVL/Market Cap</p>
+                    </div>
+                  </div> */}
                 </div>
               </div>
             </div>
