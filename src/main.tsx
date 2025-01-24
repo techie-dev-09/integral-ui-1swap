@@ -27,7 +27,7 @@ const router = createBrowserRouter([
         element: <Navigate replace to={'/welcome'} />,
         errorElement: <Page404 />,
     },
-      {
+    {
         path: '/welcome',
         element: 
         <App>

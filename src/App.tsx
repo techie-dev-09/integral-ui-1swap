@@ -11,9 +11,9 @@ import ETHLogo from '@/assets/tokens/ether.svg'
 const projectId = import.meta.env.VITE_WALLETCONNECT_PROJECT_ID
 
 const bitfinity = defineChain({
-  id: 355113,
-  network: 'bitfinity-testnet',
-  name: 'Bitfinity Testnet',
+  id: 355110,
+  network: 'bitfinity-mainnet',
+  name: 'Bitfinity Mainnet',
   nativeCurrency: { name: 'BTF', symbol: 'BTF', decimals: 18 },
   rpcUrls: {
     default: {
@@ -26,11 +26,11 @@ const bitfinity = defineChain({
   blockExplorers: {
     etherscan: {
       name: 'Bitfinity Explorer',
-      url: 'https://explorer.testnet.bitfinity.network/',
+      url: 'https://explorer.mainnet.bitfinity.network/',
     },
     default: {
       name: 'Bitfinity Explorer',
-      url: 'https://explorer.testnet.bitfinity.network/',
+      url: 'https://explorer.mainnet.bitfinity.network/',
     },
   },
   testnet: true,
@@ -44,7 +44,7 @@ createWeb3Modal({
   projectId, 
   chains,
   chainImages: {
-    355113: ETHLogo
+    355110: ETHLogo
   },
   defaultChain: bitfinity,
   themeVariables: {
