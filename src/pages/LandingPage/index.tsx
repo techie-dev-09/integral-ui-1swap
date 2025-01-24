@@ -1,6 +1,7 @@
 import PageContainer from "@/components/common/PageContainer";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { gsap } from "gsap";
+import axios from "axios";
 import "./LandingPage.css";
 import { FaDiscord, FaGithub, FaMedium, FaTelegramPlane } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
@@ -21,7 +22,25 @@ import cp3 from "@/assets/landingpage/cp3.png";
 import cp4 from "@/assets/landingpage/cp4.png";
 import { Link } from "react-router-dom";
 
+const formatLargeNumber = (value: number) => {
+  if (value >= 1e12) {
+    return `${(value / 1e12).toFixed(2)}T`; // Trillion
+  } else if (value >= 1e9) {
+    return `${(value / 1e9).toFixed(2)}B`; // Billion
+  } else if (value >= 1e6) {
+    return `${(value / 1e6).toFixed(2)}M`; // Million
+  } else {
+    return value.toString();
+  }
+};
+
+interface ICPDataType {
+  market_cap?: number;
+}
+
 const LandingPage = () => {
+  const [ICPData, setICPData] = useState<ICPDataType>({});
+
   useEffect(() => {
     const timeline = gsap.timeline({
       repeat: -1,
@@ -52,6 +71,22 @@ const LandingPage = () => {
         { x: 0, opacity: 1, stagger: 0.3 }
       )
       .to(".third-slide .image", { y: 200, opacity: 0, stagger: 0.3 });
+  }, []);
+
+  const coinmarketcapFunc = () => {
+    axios
+      .get(
+        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=internet-computer"
+      )
+      .then((res) => {
+        console.log("-------res--------", res.data[0]);
+        setICPData(res.data[0]);
+      })
+      .catch(() => {});
+  };
+
+  useEffect(() => {
+    coinmarketcapFunc();
   }, []);
 
   return (
@@ -239,7 +274,9 @@ const LandingPage = () => {
                 <div className="three-col-card">
                   <div className="single-card">
                     <div className="card-content">
-                      <h3 className="text-blue">$4B</h3>
+                      <h3 className="text-blue">
+                        ${formatLargeNumber(Number(ICPData?.market_cap))}
+                      </h3>
                       <p>ICP Market Cap</p>
                     </div>
                   </div>
@@ -273,24 +310,24 @@ const LandingPage = () => {
                       <p>DeFi TVL/Market Cap</p>
                     </div>
                   </div>
-                  {/* <div className="single-card">
+                  <div className="single-card">
                     <div className="card-content">
-                      <h3 className="text-blue">$4B</h3>
+                      <h3 className="text-blue">$2.02T</h3>
                       <p>BTC Market Cap</p>
                     </div>
                   </div>
                   <div className="single-card">
                     <div className="card-content">
-                      <h3 className="text-blue">$0.05B</h3>
+                      <h3 className="text-blue">$7.018B</h3>
                       <p>BTC DeFi TVL</p>
                     </div>
                   </div>
                   <div className="single-card">
                     <div className="card-content">
-                      <h3 className="text-blue">1%</h3>
+                      <h3 className="text-blue">0.35%</h3>
                       <p>BTC TVL/Market Cap</p>
                     </div>
-                  </div> */}
+                  </div>
                 </div>
               </div>
             </div>
