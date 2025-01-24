@@ -7,6 +7,7 @@ import { FaDiscord, FaGithub, FaMedium, FaTelegramPlane } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
 import AlgebraLogo from "@/assets/1swap.svg";
 import AlgebraIntegral from "@/assets/1swap-full.svg";
+import build_on_bitfinity from "@/assets/landingpage/build_on_bitfinity.svg";
 import swap1 from "@/assets/landingpage/swap1.png";
 import swap2 from "@/assets/landingpage/swap2.png";
 import swap3 from "@/assets/landingpage/swap3.png";
@@ -97,6 +98,9 @@ const LandingPage = () => {
             <div className="first-section">
               <div className="container">
                 <div className="fs-content">
+                  <div className="flex items-center justify-center">
+                    <img src={build_on_bitfinity} width={200} />
+                  </div>
                   <h1 className="d-flex flex-row align-items-center">
                     <span>
                       THE FIRST <br />
