@@ -1,6 +1,7 @@
 /* @import "./styles/colors"; */
 
-html, body {
+html,
+body {
   height: 100%;
   background: url("../bg.svg");
   background-color: var(--background);
@@ -43,7 +44,6 @@ html, body {
   }
 }
 
-
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
@@ -56,4 +56,23 @@ html, body {
 
 .read-the-docs {
   color: #888;
+}
+
+@font-face {
+  font-family: "Archia";
+  src: url("./assets/Archia Regular Webfont/archia-regular-webfont.eot"); /* For IE */
+  src: url("./assets/Archia Regular Webfont/archia-regular-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("./assets/Archia Regular Webfont/archia-regular-webfont.woff2")
+      format("woff2"),
+    url("./assets/Archia Regular Webfont/archia-regular-webfont.woff")
+      format("woff"),
+    url("./assets/Archia Regular Webfont/archia-regular-webfont.ttf")
+      format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Archia", sans-serif;
 }

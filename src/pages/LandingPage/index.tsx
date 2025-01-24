@@ -101,16 +101,7 @@ const LandingPage = () => {
                     <span>
                       THE FIRST <br />
                       <div className="flex flex-row items-center justify-center">
-                        <span>composable DEX built on </span>
-                        <img
-                          src="https://s2.coinmarketcap.com/static/img/coins/128x128/1.png"
-                          alt="Coin Icon"
-                          style={{
-                            width: "64px",
-                            height: "64px",
-                            marginLeft: "8px",
-                          }}
-                        />
+                        <span>composable DEX built on BTC</span>
                       </div>
                     </span>
                   </h1>
