@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import axios from "axios";
 import "./LandingPage.css";
-import { FaDiscord, FaGithub, FaMedium, FaTelegramPlane } from "react-icons/fa";
+// import { FaDiscord, FaGithub, FaMedium, FaTelegramPlane } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
 import AlgebraLogo from "@/assets/1swap.svg";
 import AlgebraIntegral from "@/assets/1swap-full.svg";
@@ -394,7 +394,7 @@ const LandingPage = () => {
             </div>
             <div className="footer-icons">
               <ul className="icons-list">
-                <li className="icon">
+                {/* <li className="icon">
                   <a href="#">
                     <FaDiscord />
                   </a>
@@ -403,13 +403,13 @@ const LandingPage = () => {
                   <a href="#">
                     <FaTelegramPlane />
                   </a>
-                </li>
+                </li> */}
                 <li className="icon">
-                  <a href="#">
+                  <a href="https://x.com/1swap_io" target="_blank">
                     <BsTwitterX />
                   </a>
                 </li>
-                <li className="icon">
+                {/* <li className="icon">
                   <a href="#">
                     <FaMedium />
                   </a>
@@ -418,7 +418,7 @@ const LandingPage = () => {
                   <a href="#">
                     <FaGithub />
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
